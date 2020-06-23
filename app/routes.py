@@ -10,4 +10,4 @@ def index():
 
 @app.route('/dice')
 def dice():
-    return str(roll.rollLog)
+    return str(roll.roll_em())
