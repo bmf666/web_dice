@@ -1,6 +1,13 @@
 from app import app
+from app import roll
+
 
 @app.route('/')
-@app.route('index')
+@app.route('/index')
 def index():
-    return '\n\n\n\whoa!'
+    return 'whoa!'
+
+
+@app.route('/dice')
+def dice():
+    return str(roll.rollLog)
