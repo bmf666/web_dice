@@ -1,7 +1,0 @@
-1. create dice rolling class
-    - update/convert/re-write dice2.py logic as a class
-2. create Flask front end
-    - ensure room to expand functionality (eg. character sheet support)
-    - begin writing selenium tests
-3. design and build character sheet class
-4. expand Flask UI to support character sheets
