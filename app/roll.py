@@ -11,46 +11,46 @@ def roll_em():
     #
     # dieCount = int(die.split("d", 1)[0])
     # debug
-    dieCount = 2
+    die_count = 2
     # dieValue = int(die.split("d", 2)[1])
-    dieValue = 20
+    die_value = 20
 
     # this is where we start the json
     #
-    rollLog = {'dice_log': []}
-    rollLog['dice_log'].append({
+    roll_log = {'dice_log': []}
+    roll_log['dice_log'].append({
         'game date': today
     })
 
     # a loop to roll the number and type of dice per the user input
     #
-    dieTotal = 0
+    die_total = 0
     count = 1
     mod = 0
 
-    while dieCount > 0:
+    while die_count > 0:
         # so here is our simple dice rolling logic
         #
-        letsRoll = random.randint(1, dieValue) + int(mod)
-        print("d", dieValue, count, ":", sep="", end="")
-        print("", letsRoll)
-        dieTotal = int(letsRoll) + dieTotal
-        rollLog['dice_log'].append({
+        lets_roll = random.randint(1, die_value) + int(mod)
+        print("d", die_value, count, ":", sep="", end="")
+        print("", lets_roll)
+        die_total = int(lets_roll) + die_total
+        roll_log['dice_log'].append({
             'roll ID': str(datetime.now()),
-            'd': dieValue,
-            'value': letsRoll,
-            'total': dieTotal
+            'd': die_value,
+            'value': lets_roll,
+            'total': die_total
         })
-        dieCount = dieCount - 1
+        die_count = die_count - 1
         count = count + 1
 
     # write to file, exit to shell
     #
-    print("\n\nRoll Total:", dieTotal)
+    print("\n\nRoll Total:", die_total)
     print("Modifier:", mod)
-    rollLog['dice_log'].append({
-        'Roll Total': dieTotal,
+    roll_log['dice_log'].append({
+        'Roll Total': die_total,
         'Modifier': int(mod)
     })
 
-    return rollLog
+    return roll_log
