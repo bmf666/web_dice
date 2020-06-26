@@ -6,14 +6,16 @@ from datetime import date, datetime
 today = str(date.today())
 
 
-def roll_em():
+def roll_em(die, mod):
     # here is where we evaluate what the user has input as dice
     #
-    # dieCount = int(die.split("d", 1)[0])
+    die_count = int(die.split("d", 1)[0])
     # debug
-    die_count = 2
-    # dieValue = int(die.split("d", 2)[1])
-    die_value = 20
+    # die_count = 2
+    die_value = int(die.split("d", 2)[1])
+    # die_value = 20
+    if len(mod) == 0:
+        mod = 0
 
     # this is where we start the json
     #
@@ -26,13 +28,12 @@ def roll_em():
     #
     die_total = 0
     count = 1
-    mod = 0
 
     while die_count > 0:
         # so here is our simple dice rolling logic
         #
         lets_roll = random.randint(1, die_value) + int(mod)
-        print("d", die_value, count, ":", sep="", end="")
+        print("d", die_value, " ", count, ":", sep="", end="")
         print("", lets_roll)
         die_total = int(lets_roll) + die_total
         roll_log['dice_log'].append({
