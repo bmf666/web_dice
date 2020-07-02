@@ -1,18 +1,12 @@
 from app import app
-from app import roll
-
+from flask import render_template
+from app.forms import RollDice
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'brad'}
-    return '''
-<html>
-    <head>
-        <title>Dice roll!</title>
-    </head>
-    <body>
-        <h1>Hello, ''' + user['username'] + '''!</h1>
-        <h1> ''' + str(roll.roll_em("6d20", "12")) + ''' </h1>
-    </body>
-</html>'''
+    # user = {'username': 'brad'}
+    # return render_template('index.html', title='DICE', user=user)
+    form = RollDice()
+    return render_template('roll.html', title='ROLL', form=form)
+

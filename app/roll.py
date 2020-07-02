@@ -10,10 +10,7 @@ def roll_em(die, mod):
     # here is where we evaluate what the user has input as dice
     #
     die_count = int(die.split("d", 1)[0])
-    # debug
-    # die_count = 2
     die_value = int(die.split("d", 2)[1])
-    # die_value = 20
     if len(mod) == 0:
         mod = 0
 

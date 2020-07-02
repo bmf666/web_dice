@@ -1,0 +1,13 @@
+<html>
+    <head>
+        {% if title %}
+        <title> {{ title }} </title>
+        {% else %}
+        <title>RPG!!!!!!</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+        {{ roll_log }}
+    </body>
+</html>
