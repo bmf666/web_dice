@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title>hard coded page title!</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>RPG Tools <a href="/index">Dice</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
