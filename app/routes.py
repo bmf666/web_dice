@@ -4,21 +4,24 @@ from app.forms import RollDice
 from app.roll import roll_em
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-    form = RollDice()
-    return render_template('roll.html', title='ROLL', form=form)
-
-
-@app.route('/roll', methods=['GET', 'POST'])
-def roll():
     form = RollDice()
     if form.validate_on_submit():
         flash('Rolling die {} with modifier {}'.format(
             form.die.data, form.mod.data))
-        roll_results = roll_em(form.die.data, form.mod.data)
-        form.results.data
-
-        return redirect('/roll')
+        roll_em(form.die.data, form.mod.data)
+        return redirect('/index')
     return render_template('roll.html', title='ROLL IT!', form=form)
+
+
+# @app.route('/roll', methods=['GET', 'POST'])
+# def roll():
+#     form = RollDice()
+#     if form.validate_on_submit():
+#         flash('Rolling die {} with modifier {}'.format(
+#             form.die.data, form.mod.data))
+#         roll_em(form.die.data, form.mod.data)
+#         return redirect('/roll')
+#    return render_template('roll.html', title='ROLL IT!', form=form)
