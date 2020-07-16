@@ -5,5 +5,5 @@ from wtforms.validators import DataRequired
 
 class RollDice(FlaskForm):
     die = StringField('Die')
-    mod = StringField('modifier')
+    mod = StringField('Modifier')
     submit = SubmitField('Roll!')
