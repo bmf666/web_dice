@@ -17,6 +17,8 @@ def roll():
     if form.validate_on_submit():
         flash('Rolling die {} with modifier {}'.format(
             form.die.data, form.mod.data))
-        roll_em(form.die.data, form.mod.data)
+        roll_results = roll_em(form.die.data, form.mod.data)
+        form.results.data
+
         return redirect('/roll')
     return render_template('roll.html', title='ROLL IT!', form=form)
