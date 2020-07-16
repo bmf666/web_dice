@@ -5,7 +5,13 @@ from app.roll import roll_em
 
 
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index')
+def index():
+    form = RollDice()
+    return render_template('roll.html', title='ROLL', form=form)
+
+
+@app.route('/roll', methods=['GET', 'POST'])
 def roll():
     form = RollDice()
     if form.validate_on_submit():
