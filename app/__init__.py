@@ -8,7 +8,6 @@
 from flask import Flask
 from config import Config
 
-
 # we're naming the app web_dice
 app = Flask(__name__)
 app.config.from_object(Config)

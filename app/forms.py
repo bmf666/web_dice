@@ -7,4 +7,3 @@ class RollDice(FlaskForm):
     die = StringField('Die')
     mod = StringField('Modifier')
     submit = SubmitField('Roll!')
-    results = TextAreaField('Results')

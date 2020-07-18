@@ -1,6 +1,4 @@
-import sys
 import random
-# import json
 from datetime import date, datetime
 
 today = str(date.today())
@@ -9,12 +7,13 @@ today = str(date.today())
 def roll_em(die, mod):
     # here is where we evaluate what the user has input as dice
     #
+    roll_list = []
     die_count = int(die.split("d", 1)[0])
     die_value = int(die.split("d", 2)[1])
     if len(mod) == 0:
         mod = 0
 
-    # this is where we start the json
+    # this is where we start the roll log
     #
     roll_log = {'dice_log': []}
     roll_log['dice_log'].append({

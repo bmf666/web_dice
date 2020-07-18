@@ -11,8 +11,10 @@ def index():
     if form.validate_on_submit():
         flash('Rolling die {} with modifier {}'.format(
             form.die.data, form.mod.data))
-        roll_em(form.die.data, form.mod.data)
-        return redirect('/index')
+        return roll_em(form.die.data, form.mod.data)
+        # return render_template()
+
+        # return redirect('/index')
     return render_template('roll.html', title='ROLL IT!', form=form)
 
 
