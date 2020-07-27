@@ -7,7 +7,6 @@ today = str(date.today())
 def roll_em(die, mod):
     # here is where we evaluate what the user has input as dice
     #
-    roll_list = []
     die_count = int(die.split("d", 1)[0])
     die_value = int(die.split("d", 2)[1])
     if len(mod) == 0:

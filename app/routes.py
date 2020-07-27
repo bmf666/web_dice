@@ -12,18 +12,8 @@ def index():
         flash('Rolling die {} with modifier {}'.format(
             form.die.data, form.mod.data))
         return roll_em(form.die.data, form.mod.data)
-        # return render_template()
 
         # return redirect('/index')
     return render_template('roll.html', title='ROLL IT!', form=form)
 
 
-# @app.route('/roll', methods=['GET', 'POST'])
-# def roll():
-#     form = RollDice()
-#     if form.validate_on_submit():
-#         flash('Rolling die {} with modifier {}'.format(
-#             form.die.data, form.mod.data))
-#         roll_em(form.die.data, form.mod.data)
-#         return redirect('/roll')
-#    return render_template('roll.html', title='ROLL IT!', form=form)
