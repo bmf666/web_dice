@@ -14,6 +14,7 @@ def roll_em(die, mod):
 
     # this is where we start the roll log
     #
+    roll_list = []
     roll_log = {'dice_log': []}
     roll_log['dice_log'].append({
         'game date': today
@@ -28,8 +29,6 @@ def roll_em(die, mod):
         # so here is our simple dice rolling logic
         #
         lets_roll = random.randint(1, die_value) + int(mod)
-        print("d", die_value, " ", count, ":", sep="", end="")
-        print("", lets_roll)
         die_total = int(lets_roll) + die_total
         roll_log['dice_log'].append({
             'roll ID': str(datetime.now()),
@@ -40,13 +39,6 @@ def roll_em(die, mod):
         die_count = die_count - 1
         count = count + 1
 
-    # write to file, exit to shell
+    # return the roll_log
     #
-    print("\n\nRoll Total:", die_total)
-    print("Modifier:", mod)
-    roll_log['dice_log'].append({
-        'Roll Total': die_total,
-        'Modifier': int(mod)
-    })
-
     return roll_log
