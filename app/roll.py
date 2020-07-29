@@ -14,11 +14,9 @@ def roll_em(die, mod):
 
     # this is where we start the roll log
     #
-    roll_list = []
-    roll_log = {'dice_log': []}
-    roll_log['dice_log'].append({
-        'game date': today
-    })
+    roll_log = {'game_id': str(datetime.now()),
+                'roll': [],
+                'total': []}
 
     # a loop to roll the number and type of dice per the user input
     #
@@ -30,15 +28,17 @@ def roll_em(die, mod):
         #
         lets_roll = random.randint(1, die_value) + int(mod)
         die_total = int(lets_roll) + die_total
-        roll_log['dice_log'].append({
-            'roll ID': str(datetime.now()),
+        roll_log['roll'].append({
             'd': die_value,
             'value': lets_roll,
-            'total': die_total
+            'mod':  mod,
         })
         die_count = die_count - 1
         count = count + 1
 
     # return the roll_log
     #
+    roll_log['total'].append({
+        'total': die_total
+    })
     return roll_log
