@@ -22,7 +22,6 @@ def roll_em(die, mod):
     #
     die_total = 0
     count = 1
-
     while die_count > 0:
         # so here is our simple dice rolling logic
         #
@@ -36,9 +35,11 @@ def roll_em(die, mod):
         die_count = die_count - 1
         count = count + 1
 
-    # return the roll_log
+    # append the total of the roll to the JSON
     #
     roll_log['total'].append({
         'total': die_total
     })
+    # return the roll_log
+    #
     return roll_log
